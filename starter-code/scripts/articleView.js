@@ -69,7 +69,7 @@ articleView.handleMainNav = function() {
 articleView.setTeasers = function() {
   $('.article-body *:nth-of-type(n+2)').hide();
   $('.read-on').on('click', function(){
-    $('read-on').show();
+    $('.article-body *:nth-of-type(n+2)').show();
   });
 };
 
