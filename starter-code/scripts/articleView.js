@@ -49,7 +49,7 @@ articleView.handleCategoryFilter = function() {
       $('article.template').hide();
     }
 
-    $('#author-filter').val('');
+    // $('#author-filter').val('');
   });
 
 };
@@ -68,16 +68,17 @@ articleView.handleMainNav = function() {
 
 articleView.setTeasers = function() {
   $('.article-body *:nth-of-type(n+2)').hide();
-  $('.read-on').on('click', function(){
-    $('.article-body *:nth-of-type(n+2)').show();
+  $('.read-on').on('click', function(event){
+    event.preventDefault();
+
   });
 };
 
 $(document).ready(function() {
+  articleView.populateFilters();
   articleView.handleAuthorFilter();
   articleView.handleCategoryFilter();
   articleView.handleMainNav();
-  articleView.populateFilters();
   articleView.setTeasers();
 
 })
